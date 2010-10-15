@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<title>Performance Profile</title>
+<script type="application/javascript" src="//github.com/eligrey/timer.js/raw/master/timer.js"></script>
+<style type="text/css">
+/*<![CDATA[*/
+:root {
+	font-family: Ubuntu; /* Oh how I love the new Ubuntu UI font */
+}
+/*]]>*/
+</style>
+</head>
+<body>
+<h1>Performance Profile</h1>
+<p>Description</p>
+<div id="results"></div>
+<script type="application/javascript">
+//<![CDATA[
+"use strict";
+
+(function () {
+var
+	  iterations = 100000 // changes this to how many times you want to run each test
+	, tests = [
+		// put tests in the form of "test name", testFunction here to be profiled
+		
+	]
+	, test = tests.length
+	, doc = document
+	, docTitle = doc.title
+	, results = doc.getElementById("results")
+	, timer = new Timer
+;
+
+doc.title += " (In Progress)";
+
+results.appendChild(doc.createElement("p")).appendChild(doc.createTextNode(
+	"Running " + iterations.toLocaleString() + " iterations per test."
+));
+
+while (test--) {
+	timer.profile(tests[test--], iterations);
+	results.appendChild(doc.createElement("div")).appendChild(doc.createTextNode(
+		tests[test] + ": " + timer.milliseconds() + "ms"
+	));
+}
+
+document.title = docTitle + " (Complete)";
+//]]>
+}());
+</script>
+</body>
+</html>
