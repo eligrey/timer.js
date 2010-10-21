@@ -2,14 +2,14 @@ timer.js is a JavaScript library that implements a constructor for creating
 high-resolution (up to µs) timers.
 
 Please note that the `microseconds()` method is only accurate to the µs in Google Chrome
-and only on non-Windows OSes.
+7+ with the launch option, `--enable-benchmarking`.
 
 API
 ---
 
 <dl>
   <dt><code>new <strong title="Timer">Timer</strong>()</code>
-  <dd>Instantiates a new timer instance.</d>
+  <dd>Instantiates a new timer.</d>
 </dl>
 
 ### Instance methods
@@ -40,7 +40,7 @@ API
 FAQ
 ---
 
-> Web Workers?
+> Will you add support for web worker threads so I profile multiple tests concurrently?
 
 I don't know how practical running two profiling tests at once is, but if demand is high
 enough, I'll make a web worker integration script for this library. The API would mostly

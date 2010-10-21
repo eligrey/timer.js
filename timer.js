@@ -1,7 +1,7 @@
 /*
  * timer.js: Implements a high-resolution (up to µs) timer constructor.
  *
- * 2010-07-25
+ * 2010-10-21
  * 
  * By Eli Grey, http://eligrey.com
  * Public Domain.
@@ -26,9 +26,9 @@ var Timer = Timer || (function () {
 		}
 	;
 	
-	if (typeof chromium !== "undefined" && chromium.Interval) {
-		// Chromium has a native timer constructor
-		timerPrototype = (Timer = chromium.Interval).prototype;
+	if (typeof chrome !== "undefined" && typeof chrome.Interval === "function") {
+		// Google Chrome has a native timer constructor
+		timerPrototype = (Timer = chrome.Interval).prototype;
 		timerPrototype.milliseconds = function () {
 			return this.microseconds() / 1000;
 		};
