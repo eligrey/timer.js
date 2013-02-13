@@ -47,4 +47,4 @@ enough, I'll make a web worker integration script for this library. The API woul
 be the same, except that profiled code will have to be strings instead of functions, and
 there would be callback parameters for all of the methods.
 
-![Tracking image](//in.getclicky.com/212712ns.gif)
+![Tracking image](https://in.getclicky.com/212712ns.gif)
